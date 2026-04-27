@@ -25,10 +25,11 @@ const TEXTURE_BASE = "/models";
 
 export function Airplane({ assembly, drift }: Props) {
   const fbx = useLoader(FBXLoader, "/models/airplane.fbx");
-  const albedo = useLoader(THREE.TextureLoader, `${TEXTURE_BASE}/albedo.png`);
-  const normalMap = useLoader(THREE.TextureLoader, `${TEXTURE_BASE}/normal.png`);
-  const roughnessMap = useLoader(THREE.TextureLoader, `${TEXTURE_BASE}/roughness.png`);
-  const metallicMap = useLoader(THREE.TextureLoader, `${TEXTURE_BASE}/metallic.png`);
+  // Compressed JPEGs — 189 KB total vs 11 MB original PNGs
+  const albedo = useLoader(THREE.TextureLoader, `${TEXTURE_BASE}/albedo.jpg`);
+  const normalMap = useLoader(THREE.TextureLoader, `${TEXTURE_BASE}/normal.jpg`);
+  const roughnessMap = useLoader(THREE.TextureLoader, `${TEXTURE_BASE}/roughness.jpg`);
+  const metallicMap = useLoader(THREE.TextureLoader, `${TEXTURE_BASE}/metallic.jpg`);
 
   const groupRef = useRef<THREE.Group>(null);
   const stateRef = useRef<PartState[]>([]);
