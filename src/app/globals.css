@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #0a0d14;
+  --bg-2: #0e1320;
+  --cream: #f5f1ea;
+  --gold: #c8a363;
+  --mist: #dfe5ee;
+  --font-sans: ui-sans-serif, system-ui, "Inter", "Segoe UI", sans-serif;
+  --font-display: ui-serif, "Cormorant Garamond", "Playfair Display", Georgia, serif;
+}
+
+html, body {
+  background: var(--bg);
+  color: var(--cream);
+  -webkit-font-smoothing: antialiased;
+  font-family: var(--font-sans);
+  overscroll-behavior: none;
+}
+
+body {
+  background:
+    radial-gradient(1200px 800px at 80% -10%, rgba(200,163,99,0.08), transparent 60%),
+    radial-gradient(900px 600px at -10% 30%, rgba(110,140,200,0.07), transparent 60%),
+    linear-gradient(180deg, #060810 0%, #0a0d14 30%, #0a0d14 70%, #060810 100%);
+}
+
+::selection { background: rgba(200,163,99,0.35); color: #fff; }
+
+.font-display { font-family: var(--font-display); }
+
+.grain::before {
+  content: "";
+  position: fixed; inset: 0;
+  pointer-events: none;
+  background-image: radial-gradient(rgba(255,255,255,0.025) 1px, transparent 1px);
+  background-size: 3px 3px;
+  mix-blend-mode: overlay;
+  z-index: 1;
+}
+
+.text-balance { text-wrap: balance; }
+
+.btn-gold {
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.6rem;
+  padding: 0.9rem 1.5rem;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #d8b87a 0%, #b88a48 100%);
+  color: #11151c;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  box-shadow: 0 10px 30px -8px rgba(200,163,99,0.45), inset 0 1px 0 rgba(255,255,255,0.4);
+  transition: transform 0.4s cubic-bezier(.2,.8,.2,1), box-shadow 0.4s;
+}
+.btn-gold:hover { transform: translateY(-2px); box-shadow: 0 20px 40px -10px rgba(200,163,99,0.55), inset 0 1px 0 rgba(255,255,255,0.5); }
+
+.btn-ghost {
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.6rem;
+  padding: 0.9rem 1.4rem;
+  border-radius: 999px;
+  border: 1px solid rgba(245,241,234,0.2);
+  color: var(--cream);
+  transition: background 0.3s, border-color 0.3s;
+}
+.btn-ghost:hover { background: rgba(245,241,234,0.06); border-color: rgba(245,241,234,0.4); }
+
+.divider-line {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(245,241,234,0.18), transparent);
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.32em;
+  font-size: 0.72rem;
+  color: rgba(245,241,234,0.55);
+}
+
+.card-glass {
+  background: linear-gradient(180deg, rgba(20,25,36,0.7), rgba(12,16,24,0.55));
+  border: 1px solid rgba(245,241,234,0.08);
+  backdrop-filter: blur(8px);
+}
